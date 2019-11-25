@@ -1,0 +1,56 @@
+<%- include('../partials/header') %>
+
+<section>
+    <div>Airline: <%=  flights.airline %></div>
+    <div>Flight Number: <%=  flights.flightNo %></div>
+    <div>Departure Date: <%=  flights.departs %> </div>
+    <div>Departing Airport: <%=  flights.depAirport %></div>
+    <br>
+</section>
+
+<form id='add-destination' method="POST" action='/flights/<%= flights._id %>/destination'>
+	<label> Destination airport:</label>
+<select name="destAirport">
+	
+  <option value="Paris">Paris</option>
+  <option value="Los Angeles">Los Angeles</option>
+  <option value="Anchorage">Anchorage</option>
+  <option value="Cuba">Cuba</option>
+  <option value="London">London</option>
+  <option value="Sydney">Sydney</option>
+  </select>
+  <br>
+  <br>
+	
+	<label>Arrival Time:
+	  <input type="datetime-local" name="arrives">
+	</label>	
+    
+    <input type='submit' value='Add Destination'>
+    
+
+</form>
+<br>
+<a href='/flights/<%= flights._id %>/tickets/new/'>Add Ticket</a>
+<br>
+<h2>Ticket Info</h2>
+<% if (tickets.length) { %>
+<% tickets.forEach(function(x) { %>
+<br>
+<%= x.price %>
+<%= x.seat %>
+<% })}; %>
+<br>
+
+<div>
+<h2>Arrival Info</h2>
+<% if (flights.destination.length) { %>
+<% flights.destination.forEach(function(x) { %>
+<br>
+<%= x.destAirport %>
+<%= x.arrives %>
+<% })}; %>
+
+</div>
+
+<%- include('../partials/footer') %>

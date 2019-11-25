@@ -5,8 +5,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  <nav>
+      <a href="" class="brand-logo">Air Austin</a>
+    <a class="right hide-on-med-and-down" href="/flights" <%- title === 'All Flights' ? 'class="active"' : '' %>>ALL FLIGHTS</a>
+    <a  class="right hide-on-med-and-down" href="/flights/new" <%- title === 'Add Flight' ? 'class="active"' : '' %>>ADD FLIGHT</a>
+  </nav>
+  
+  <body >
+    
+    
   </body>
 </html>

@@ -1,8 +1,19 @@
 body {
+ background-image: url('https://i.imgur.com/kLHjsWl.jpg');
+ background-size: cover;
+  color: azure;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+
+nav{
+  
+  background-color: rgb(61, 174, 235, .5);
+ 
+}
+a{
+ 
+  margin : 10px 6px;
+
 }
